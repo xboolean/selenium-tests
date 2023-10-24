@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app:delegated
+
+  selenium-chrome:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
